@@ -1,0 +1,33 @@
+{
+  "name": "graphql-load-tester",
+  "version": "1.0.0",
+  "description": "Graphql load tester boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "clean": "rm -rf dist",
+    "run:smoke": "k6 run src/smoke/index.js",
+    "run:load": "k6 run src/load/index.js --compatibility-mode=extended --out json=load-tests-result.json",
+    "run:load:summary": "k6 run src/load/index.js --compatibility-mode=extended --summary-export=load-tests-summary.json ",
+    "run:stress": "k6 run src/load/index.js"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "robertzibert",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.8.7",
+    "@babel/node": "7.8.7",
+    "@babel/preset-env": "7.8.7",
+    "@babel/register": "7.8.6",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-rokket-labs": "^0.1.4",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "prettier": "^2.0.5",
+    "regenerator-runtime": "0.13.3"
+  }
+}
